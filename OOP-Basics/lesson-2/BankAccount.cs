@@ -58,5 +58,16 @@ namespace lesson_2
                               $"Тип счета: {_accountType}\n" +
                               $"--------------------------");
         }
+
+        public void TransferToTheAccount(BankAccount bankAccount, decimal amount)
+        {
+            bankAccount._balance -= amount;
+
+            BankAccount recipientsBankAccount = new BankAccount(0, AccountType.SavingAccount);
+
+            recipientsBankAccount._balance += amount;
+
+            Console.WriteLine($"Перевод суммы: {amount} $ успешно выполнен!\nТекущий баланс: {bankAccount._balance} $");
+        }
     }
 }

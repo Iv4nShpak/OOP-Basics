@@ -6,14 +6,9 @@ namespace lesson_2
     {
         static void Main(string[] args)
         {
-            BankAccount bankAccount1 = new BankAccount();
+            BankAccount bankAccount1 = new BankAccount(5000.00m, AccountType.CreditAccount);
             bankAccount1.PrintAccount();
-            bankAccount1 = new BankAccount(5000.00m, AccountType.CreditAccount);
-            bankAccount1.PrintAccount();
-            bankAccount1 = new BankAccount(6895544.87m);
-            bankAccount1.PrintAccount();
-            bankAccount1 = new BankAccount(AccountType.SavingAccount);
-            bankAccount1.PrintAccount();
+            bankAccount1.TransferToTheAccount(bankAccount1, 500.00m);
 
             Console.ReadKey();
         }
